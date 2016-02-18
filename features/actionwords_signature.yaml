@@ -1,0 +1,43 @@
+---
+- name: I start the coffee machine
+  uid: ebbef155-f38f-4409-8d40-2f39ede01492
+  parameters:
+  - name: lang
+- name: I shutdown the coffee machine
+  uid: 2299e2bf-beb2-41b0-a69d-fbbf087c638e
+  parameters: []
+- name: message "message" should be displayed
+  uid: edb2adc6-158f-4469-8d0c-55b98f4b5dd1
+  parameters:
+  - name: message
+- name: coffee should be served
+  uid: 9bc837f1-3ec8-41eb-839f-4aaeb2b322c5
+  parameters: []
+- name: coffee should not be served
+  uid: 0d857cd3-1908-4810-821c-0c4a44a7aac9
+  parameters: []
+- name: I take a coffee
+  uid: d81c3b66-d16c-4b2f-9060-886169a779e1
+  parameters: []
+- name: I empty the coffee grounds
+  uid: 84a7bc87-1f83-4965-8d86-e3f2a083f2c6
+  parameters: []
+- name: I fill the beans tank
+  uid: 3c8f0fba-3cdb-4e7a-ba32-d954a8b22a18
+  parameters: []
+- name: I fill the water tank
+  uid: b1f82539-66c2-4a47-930c-1755dc9f0ba7
+  parameters: []
+- name: I take "coffee_number" coffees
+  uid: c7df578f-ea67-41a9-b583-0893014d4b2e
+  parameters:
+  - name: coffee_number
+- name: the coffee machine is started
+  uid: debacbf5-0f11-4b47-aac8-956d680381ae
+  parameters: []
+- name: fifty coffees have been taken without filling the tank
+  uid: ed91673e-0728-4290-b183-ae04c6f1dddd
+  parameters: []
+- name: thirty eight coffees are taken without filling beans
+  uid: 63574d0d-5e11-45ad-8928-6879035cbec0
+  parameters: []
