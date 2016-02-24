@@ -1,0 +1,15 @@
+language: python
+sudo: false
+
+before_install:
+  - pip install behave
+  - rvm install 2.2
+  - rvm use 2.2
+  - gem install hiptest-publisher
+  - "hiptest-publisher -c behave.conf --only=features,step_definitions --test-run-id=16134"
+
+script:
+ - behave --junit --junit-directory results
+
+after_script:
+ - hiptest-publisher -c behave.conf --push=results/*.xml --test-run-id=16134
