@@ -9,7 +9,6 @@ from behave import *
 use_step_matcher('re')
 
 
-@given(r'I start the coffee machine "(.*)"')
 @when(r'I start the coffee machine "(.*)"')
 def impl(context, lang = "en"):
     context.actionwords.i_start_the_coffee_machine(lang)
@@ -53,7 +52,7 @@ def impl(context):
 
 
 @when(r'I take "(.*)" coffees')
-def impl(context, coffee_number):
+def impl(context, coffee_number = 10):
     context.actionwords.i_take_coffee_number_coffees(coffee_number)
 
 

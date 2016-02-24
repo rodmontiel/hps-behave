@@ -1,15 +1,13 @@
-@JIRA:CMBW-3
 Feature: Nominal case
     As a coffee lover
     I can get coffee from the machine
     So I can enjoy the rest of the day
 
   Scenario: Simple use
-    Given I start the coffee machine "en"
+    Given the coffee machine is started
     When I take a coffee
     Then coffee should be served
 
-  @JIRA:CMBW-2
   Scenario Outline: Messages are based on language
     When I start the coffee machine "<lang>"
     Then message "<ready_message>" should be displayed
