@@ -20,7 +20,7 @@ def impl(context):
 
 
 @then(r'message "(.*)" should be displayed')
-def impl(context, message):
+def impl(context, message = ""):
     context.actionwords.message_message_should_be_displayed(message)
 
 
@@ -39,6 +39,9 @@ def impl(context):
     context.actionwords.i_take_a_coffee()
 
 
+@when(r'I empty the coffee grounds')
+def impl(context):
+    context.actionwords.i_empty_the_coffee_grounds()
 
 
 @when(r'I fill the beans tank')
@@ -52,6 +55,7 @@ def impl(context):
 
 
 @when(r'I take "(.*)" coffees')
+@given(r'I take "(.*)" coffees')
 def impl(context, coffee_number = 10):
     context.actionwords.i_take_coffee_number_coffees(coffee_number)
 
@@ -61,11 +65,22 @@ def impl(context):
     context.actionwords.the_coffee_machine_is_started()
 
 
-@when(r'fifty coffees have been taken without filling the tank')
+@given(r'I handle everything except the water tank')
 def impl(context):
-    context.actionwords.fifty_coffees_have_been_taken_without_filling_the_tank()
+    context.actionwords.i_handle_everything_except_the_water_tank()
 
 
-@when(r'thirty eight coffees are taken without filling beans')
+
+
+
+
+
+
+@given(r'I handle everything except the beans')
 def impl(context):
-    context.actionwords.thirty_eight_coffees_are_taken_without_filling_beans()
+    context.actionwords.i_handle_everything_except_the_beans()
+
+
+@given(r'I handle everything except the grounds')
+def impl(context):
+    context.actionwords.i_handle_everything_except_the_grounds()
