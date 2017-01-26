@@ -7,7 +7,7 @@ class Actionwords:
         self.sut = CoffeeMachine()
         self.handled = []
 
-    def i_start_the_coffee_machine(self, lang = "en"):
+    def i_start_the_coffee_machine_using_language_lang(self, lang = "en"):
         self.sut.start(lang)
 
     def i_shutdown_the_coffee_machine(self):
@@ -51,7 +51,7 @@ class Actionwords:
                 self.i_empty_the_coffee_grounds()
 
     def the_coffee_machine_is_started(self):
-        self.i_start_the_coffee_machine()
+        self.i_start_the_coffee_machine_using_language_lang()
 
     def i_handle_water_tank(self):
         self.handled.append('water')
@@ -73,3 +73,17 @@ class Actionwords:
     def i_handle_everything_except_the_grounds(self):
         self.i_handle_water_tank()
         self.i_handle_beans()
+
+    def displayed_message_is(self, free_text = ""):
+        self.message_message_should_be_displayed(message = free_text)
+
+    def i_switch_to_settings_mode(self):
+        self.sut.show_settings()
+
+    def settings_should_be(self, datatable = "||"):
+        # Apparently, no way to get the raw table and assert_equals does not work that much ...
+        expected = [datatable.rows[0].headings]
+        for row in datatable.rows:
+            expected.append([c for c in row])
+
+        assert (expected == [[str(k), str(v)] for k, v in self.sut.get_settings().items()]) is True

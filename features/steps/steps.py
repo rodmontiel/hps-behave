@@ -9,9 +9,9 @@ from behave import *
 use_step_matcher('re')
 
 
-@when(r'I start the coffee machine "(.*)"')
+@when(r'I start the coffee machine using language "(.*)"')
 def impl(context, lang = "en"):
-    context.actionwords.i_start_the_coffee_machine(lang)
+    context.actionwords.i_start_the_coffee_machine_using_language_lang(lang)
 
 
 @when(r'I shutdown the coffee machine')
@@ -84,3 +84,18 @@ def impl(context):
 @given(r'I handle everything except the grounds')
 def impl(context):
     context.actionwords.i_handle_everything_except_the_grounds()
+
+
+@then(r'displayed message is')
+def impl(context, free_text = ""):
+    context.actionwords.displayed_message_is(context.text)
+
+
+@when(r'I switch to settings mode')
+def impl(context):
+    context.actionwords.i_switch_to_settings_mode()
+
+
+@then(r'settings should be')
+def impl(context, datatable = "||"):
+    context.actionwords.settings_should_be(context.table)
