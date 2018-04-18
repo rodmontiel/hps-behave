@@ -1,10 +1,10 @@
 from behave import *
 
-# This should be added to environments.py
+# This should be added to environment.py
 # from steps.actionwords import Actionwords
 #
 # def before_scenario(context, scenario):
-#     context.actionwords = Actionwords.new(nil)
+#     context.actionwords = Actionwords()
 
 use_step_matcher('re')
 
@@ -55,7 +55,6 @@ def impl(context):
 
 
 @when(r'I take "(.*)" coffees')
-@given(r'I take "(.*)" coffees')
 def impl(context, coffee_number = 10):
     context.actionwords.i_take_coffee_number_coffees(coffee_number)
 
@@ -70,10 +69,19 @@ def impl(context):
     context.actionwords.i_handle_everything_except_the_water_tank()
 
 
+@given(r'I handle water tank')
+def impl(context):
+    context.actionwords.i_handle_water_tank()
 
 
+@given(r'I handle beans')
+def impl(context):
+    context.actionwords.i_handle_beans()
 
 
+@given(r'I handle coffee grounds')
+def impl(context):
+    context.actionwords.i_handle_coffee_grounds()
 
 
 @given(r'I handle everything except the beans')
