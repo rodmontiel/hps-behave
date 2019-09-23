@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Install publisher and dependencies
           command: |
-            make install_prerequisites
+            sudo make install_prerequisites
             sudo apt-get update
             sudo apt-get install ruby ruby-dev
             sudo gem install hiptest-publisher
