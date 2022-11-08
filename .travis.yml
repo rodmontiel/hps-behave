@@ -5,6 +5,7 @@ before_install:
   - pip install behave
   - rvm install 2.3
   - rvm use 2.3
+  - gem install racc -v 1.5.2
   - gem install hiptest-publisher
   - "hiptest-publisher -c behave.conf --only=features,step_definitions --test-run-id=715913"
 
