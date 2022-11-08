@@ -6,6 +6,7 @@ before_install:
   - rvm install 2.3
   - rvm use 2.3
   - gem install racc -v 1.5.2
+  - gem install nokogiri -v 1.10.10
   - gem install hiptest-publisher
   - "hiptest-publisher -c behave.conf --only=features,step_definitions --test-run-id=715913"
 
